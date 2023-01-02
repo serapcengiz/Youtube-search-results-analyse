@@ -2,10 +2,13 @@ from bs4 import BeautifulSoup
 from requests_html import HTMLSession
 import pandas as pd
 import urllib.parse
+import openpyxl
+import os
+from tkinter import messagebox as mb
+import os.path as op
 def youtube_data(url):
     session=HTMLSession()
     res=session.get(url)
-    #execute javascript
     res.html.render(sleep=8,timeout=8000)
     soup=BeautifulSoup(res.html.html,"html.parser")
     videos_data=soup.findAll("ytd-video-renderer")
@@ -54,13 +57,45 @@ def youtube_data(url):
     return data_list
 def results(data_list):
     dataResult=pd.DataFrame(data_list)
-    dataResult.to_csv("youtube data.csv",index=False)
-    print("done")
+    dataResult.to_csv("youtube-data.csv",index=False)
+    print("Done")
+    
+
 
 def data_extraction():
     search=y.get()
     data=youtube_data(f"https://www.youtube.com/results?search_query={search}")
     Result=results(data)
+    if op.exists("youtube-data.csv"):
+        mb.showinfo("Warnings ","Data extraction is successful.")
+def csvExeceleDonus():
+    data = pd.read_csv("youtube-data.csv")
+    wb = openpyxl.Workbook()
+    sayfa = wb.active
+
+    a2 = len(data)           ### toplan satır sayısı
+    a3 = len(data.columns)   ### toplam sütun sayısı
+    print('satır uzunluğu: ', a2)
+    print('sütun sayısı: ', a3)
+
+
+    for x in range(a3):      ### sütun başlıklarını yazdırma döngüsü
+        c = x + 1
+        sayfa.cell(row = 1, column = c).value = data.columns[x]
+
+
+    for x in range(a2):    ### tüm satırlardaki verileri excele yazdırma döngüsü
+        for y in range(a3):
+            r = x + 2
+            c = y + 1
+            sayfa.cell(row = r, column = c).value = data.iat[x,y]
+
+
+    wb.save("youtube-data-excell.xlsx")
+    os.remove("youtube-data.csv")
+    print('İşlem başarıyla tamamlandı. Excel dosyanız oluşturuldu')
+    if op.exists("youtube-data-excell.xlsx"):
+        mb.showinfo("Warnings ","You can access the excel file in the downloaded folder.")
 import tkinter as tk
 arayüz = tk.Tk()
 arayüz.configure(background="black")
@@ -80,5 +115,7 @@ tahmin.place(x=200, y=340)
 
 veri = tk.Button(text="DATA EXTRACTION",command=data_extraction,activebackground="Plum")
 veri.place(x=280,y=340)
-arayüz.mainloop()
 
+excell = tk.Button(text="Excell View",command=csvExeceleDonus)
+excell.place(x=200, y=380)
+arayüz.mainloop()
