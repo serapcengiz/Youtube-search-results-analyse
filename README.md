@@ -4,7 +4,7 @@
 2. Import the following libraries.
 ## Requests Library
 `pip install beautifulsoup4`
-`pip install html-requests`
+`pip install requests-html`
 `pip install pandas`
 `pip install parse`
 `pip install openpyxl`
@@ -25,3 +25,4 @@ It will give you such a warning when the excel file is created:
 <img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/excelbutonalert.png >
 
 7. As shown in the alert, you can access the data results with the file named "youtube-data-excell" in the downloaded file.
+##Please use Python 3.10
