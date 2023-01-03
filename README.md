@@ -9,6 +9,7 @@
 `pip install parse`
 `pip install openpyxl`
 `pip install tkinter`
+If you use PyCharm you can add packages manually.
 
 3. When the program runs, you will see an interface like this:
 <img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/uygulamaekran%C4%B1.png >
