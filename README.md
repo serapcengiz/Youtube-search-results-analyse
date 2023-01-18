@@ -11,19 +11,14 @@
 `pip install tkinter`
 If you use PyCharm you can add packages manually.
 
-3. When the program runs, you will see an interface like this:
-<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/uygulamaekran%C4%B1.png >
+3. When the program runs, you will see an interface like this and Enter the subject you want to extract the data from in the "Enter Subject" field and click the "Data extraction" button andbit will start to extract the data when it turns purple:
+<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/arayüz.png >
 
-4. Enter the subject you want to extract the data from in the "Enter Subject" field and click the "Data extraction" button and
-it will start to extract the data when it turns purple:
-<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/dataextractiontıklayınca.png >
+4. It will give you a warning like this when the data extraction process is finished.
+<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/alert1.png >
 
-5. It will give you a warning like this when the data extraction process is finished.
-<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/dataextractionalert.png >
+5. After you wil see this alert:
+<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/alert2.png >
 
-6. Press the excel button to access the excel file of the captured data.Press the excel button to access the excel file of the extracted data.
-It will give you such a warning when the excel file is created:
-<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/excelbutonalert.png >
-
-7. As shown in the alert, you can access the data results with the file named "youtube-data-excell" in the downloaded file.
+6. As shown in the alert, you can access the data results with the file named "youtube-data-excell" in the downloaded file.
 ## Please use Python 3.10
