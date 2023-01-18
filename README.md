@@ -21,4 +21,5 @@ If you use PyCharm you can add packages manually.
 <img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/alert2.png >
 
 6. As shown in the alert, you can access the data results with the file named "youtube-data-excell" in the downloaded file.
+<img src=https://github.com/serapcengiz/Youtube-search-results-analyse/blob/master/screeshot/veriexcel.png>
 ## Please use Python 3.10
